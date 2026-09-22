@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lorem Ipsum — NGO</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap');
+
+:root{
+--navy:#28658F;
+--navy-dark:#20252A;
+--red:#6D3FA0;
+--sand:#E9EAF2;
+--cream:#F6F4EF;
+--sage:#668C55;
+--white:#fff;
+--text:#20252A;
+--muted:#596168;
+--border:#D9D5CC;
+--max:1240px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"DM Sans",sans-serif;color:var(--text);background:var(--cream);line-height:1.6}
+img{display:block;width:100%;object-fit:cover}
+a{text-decoration:none;color:inherit}
+.container{width:min(calc(100% - 48px),var(--max));margin:auto}
+
+.header{
+background:var(--white);
+border-bottom:1px solid var(--border);
+position:relative;
+z-index:10
+}
+
+.header-inner{
+height:82px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:40px
+}
+
+.logo{
+font-size:21px;
+font-weight:700;
+letter-spacing:-.5px;
+color:var(--navy)
+}
+
+.logo span{color:var(--red)}
+
+.nav{
+display:flex;
+align-items:center;
+gap:34px;
+font-size:14px;
+font-weight:600;
+color:#35424E
+}
+
+.nav a:hover{color:var(--red)}
+
+.header-btn{
+background:var(--navy);
+color:var(--white);
+padding:12px 22px;
+font-size:13px;
+font-weight:600
+}
+
+.hero{
+background:var(--navy);
+color:var(--white);
+min-height:680px;
+display:flex;
+align-items:center;
+position:relative;
+overflow:hidden
+}
+
+.hero:after{
+content:"";
+position:absolute;
+width:520px;
+height:520px;
+border:1px solid rgba(255,255,255,.12);
+border-radius:50%;
+right:-180px;
+top:-160px
+}
+
+.hero-inner{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:80px;
+align-items:center;
+padding:90px 0
+}
+
+.hero-copy{max-width:610px}
+
+.eyebrow{
+display:flex;
+align-items:center;
+gap:12px;
+font-size:12px;
+font-weight:700;
+letter-spacing:2px;
+text-transform:uppercase;
+color:var(--sand);
+margin-bottom:26px
+}
+
+.eyebrow:before{
+content:"";
+width:34px;
+height:2px;
+background:var(--red)
+}
+
+.hero h1{
+font-family:"Playfair Display",serif;
+font-size:clamp(52px,6vw,82px);
+font-weight:500;
+line-height:1.03;
+letter-spacing:-2.5px;
+margin-bottom:30px
+}
+
+.hero p{
+font-size:17px;
+line-height:1.8;
+color:#D8E0E7;
+max-width:540px;
+margin-bottom:38px
+}
+
+.hero-actions{
+display:flex;
+gap:14px;
+flex-wrap:wrap
+}
+
+.btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:14px 25px;
+font-size:13px;
+font-weight:700;
+border:1px solid transparent
+}
+
+.btn-primary{background:var(--red);color:white}
+.btn-outline{border-color:rgba(255,255,255,.35);color:white}
+
+.hero-visual{
+position:relative;
+height:530px
+}
+
+.hero-main-image{
+height:470px;
+width:82%;
+margin-left:auto;
+object-fit:cover
+}
+
+.hero-small-image{
+position:absolute;
+bottom:0;
+left:0;
+width:46%;
+height:220px;
+border:10px solid var(--navy)
+}
+
+.hero-label{
+position:absolute;
+right:0;
+bottom:34px;
+background:var(--sand);
+color:var(--navy);
+padding:17px 22px;
+font-size:12px;
+font-weight:700;
+letter-spacing:1px;
+text-transform:uppercase
+}
+
+.intro{
+background:var(--white);
+padding:105px 0
+}
+
+.intro-grid{
+display:grid;
+grid-template-columns:1fr 1.3fr;
+gap:100px
+}
+
+.section-label{
+font-size:12px;
+font-weight:700;
+letter-spacing:2px;
+text-transform:uppercase;
+color:var(--red);
+margin-bottom:18px
+}
+
+.intro h2,
+.section-heading h2{
+font-family:"Playfair Display",serif;
+font-size:clamp(38px,4vw,58px);
+font-weight:500;
+line-height:1.12;
+letter-spacing:-1px;
+color:var(--navy)
+}
+
+.intro-copy p{
+font-size:18px;
+color:var(--muted);
+margin-bottom:22px
+}
+
+.text-link{
+font-size:13px;
+font-weight:700;
+color:var(--red);
+border-bottom:1px solid var(--red);
+padding-bottom:4px
+}
+
+.principles{
+padding:105px 0;
+background:var(--cream)
+}
+
+.section-heading{
+display:flex;
+justify-content:space-between;
+align-items:end;
+gap:50px;
+margin-bottom:55px
+}
+
+.section-heading>div:last-child{
+max-width:430px;
+color:var(--muted);
+font-size:15px
+}
+
+.principle-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+border-top:1px solid var(--border);
+border-bottom:1px solid var(--border)
+}
+
+.principle{
+padding:38px 34px 42px 0;
+border-right:1px solid var(--border)
+}
+
+.principle:not(:first-child){padding-left:34px}
+.principle:last-child{border-right:0}
+
+.principle-number{
+font-size:12px;
+font-weight:700;
+color:var(--red);
+margin-bottom:48px
+}
+
+.principle h3{
+font-family:"Playfair Display",serif;
+font-size:28px;
+font-weight:500;
+color:var(--navy);
+margin-bottom:14px
+}
+
+.principle p{
+font-size:14px;
+color:var(--muted)
+}
+
+.feature{
+background:var(--sand);
+padding:100px 0
+}
+
+.feature-grid{
+display:grid;
+grid-template-columns:1.05fr 1fr;
+gap:85px;
+align-items:center
+}
+
+.feature-image{
+height:570px
+}
+
+.feature-content .section-label{color:var(--navy)}
+
+.feature-content h2{
+font-family:"Playfair Display",serif;
+font-size:clamp(40px,4vw,60px);
+line-height:1.1;
+font-weight:500;
+color:var(--navy);
+margin-bottom:24px
+}
+
+.feature-content>p{
+color:#4F5B61;
+font-size:16px;
+margin-bottom:35px;
+max-width:510px
+}
+
+.feature-list{
+border-top:1px solid rgba(16,42,67,.2)
+}
+
+.feature-item{
+display:grid;
+grid-template-columns:45px 1fr;
+gap:20px;
+padding:22px 0;
+border-bottom:1px solid rgba(16,42,67,.2)
+}
+
+.feature-item span{
+font-size:12px;
+font-weight:700;
+color:var(--red)
+}
+
+.feature-item h4{
+font-size:15px;
+color:var(--navy);
+margin-bottom:3px
+}
+
+.feature-item p{
+font-size:13px;
+color:#5E696E
+}
+
+.programs{
+padding:110px 0;
+background:var(--white)
+}
+
+.program-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:28px
+}
+
+.program{
+border:1px solid var(--border);
+background:var(--white)
+}
+
+.program-image{
+height:270px
+}
+
+.program-body{
+padding:28px
+}
+
+.program-tag{
+font-size:10px;
+font-weight:700;
+letter-spacing:1.5px;
+text-transform:uppercase;
+color:var(--red);
+margin-bottom:12px
+}
+
+.program h3{
+font-family:"Playfair Display",serif;
+font-size:27px;
+font-weight:500;
+color:var(--navy);
+margin-bottom:10px
+}
+
+.program p{
+font-size:14px;
+color:var(--muted);
+margin-bottom:24px
+}
+
+.program a{
+font-size:12px;
+font-weight:700;
+color:var(--navy)
+}
+
+.impact{
+background:var(--navy-dark);
+color:white;
+padding:100px 0
+}
+
+.impact-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:90px;
+align-items:center
+}
+
+.impact h2{
+font-family:"Playfair Display",serif;
+font-size:clamp(42px,4vw,60px);
+font-weight:500;
+line-height:1.1;
+margin-bottom:24px
+}
+
+.impact-copy{
+color:#BFCBD5;
+font-size:15px;
+max-width:500px
+}
+
+.stats{
+display:grid;
+grid-template-columns:1fr 1fr;
+border-top:1px solid rgba(255,255,255,.2);
+margin-top:45px
+}
+
+.stat{
+padding:25px 20px 25px 0;
+border-bottom:1px solid rgba(255,255,255,.2)
+}
+
+.stat:nth-child(odd){border-right:1px solid rgba(255,255,255,.2)}
+.stat:nth-child(even){padding-left:25px}
+
+.stat strong{
+display:block;
+font-family:"Playfair Display",serif;
+font-size:43px;
+font-weight:500;
+color:var(--sand)
+}
+
+.stat span{
+font-size:12px;
+color:#AEBBC5;
+text-transform:uppercase;
+letter-spacing:1px
+}
+
+.impact-images{
+display:grid;
+grid-template-columns:1.35fr .8fr;
+gap:15px;
+height:510px
+}
+
+.impact-images img:first-child{height:100%}
+.impact-images img:last-child{height:65%;align-self:end}
+
+.cta{
+padding:95px 0;
+background:var(--red);
+color:white
+}
+
+.cta-inner{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:60px
+}
+
+.cta h2{
+font-family:"Playfair Display",serif;
+font-size:clamp(40px,4vw,58px);
+font-weight:500;
+line-height:1.1;
+max-width:700px
+}
+
+.cta p{
+margin-top:14px;
+max-width:600px;
+font-size:15px;
+color:#F5DFD9
+}
+
+.cta .btn{
+background:white;
+color:var(--navy);
+white-space:nowrap
+}
+
+.footer{
+background:#071724;
+color:white;
+padding:70px 0 30px
+}
+
+.footer-top{
+display:grid;
+grid-template-columns:1.5fr 1fr 1fr 1fr;
+gap:50px;
+padding-bottom:60px
+}
+
+.footer-logo{
+font-size:21px;
+font-weight:700;
+margin-bottom:18px
+}
+
+.footer-logo span{color:var(--red)}
+
+.footer-description{
+font-size:13px;
+color:#9DABB5;
+max-width:300px
+}
+
+.footer h4{
+font-size:12px;
+letter-spacing:1.5px;
+text-transform:uppercase;
+margin-bottom:20px
+}
+
+.footer a,
+.footer p{
+display:block;
+font-size:13px;
+color:#9DABB5;
+margin-bottom:9px
+}
+
+.footer-bottom{
+border-top:1px solid rgba(255,255,255,.1);
+padding-top:22px;
+display:flex;
+justify-content:space-between;
+font-size:11px;
+color:#75848F
+}
+
+@media(max-width:900px){
+.nav{display:none}
+.hero-inner,
+.intro-grid,
+.feature-grid,
+.impact-grid{grid-template-columns:1fr}
+.hero{min-height:auto}
+.hero-inner{padding:75px 0;gap:55px}
+.hero-visual{height:500px}
+.intro-grid{gap:40px}
+.section-heading{display:block}
+.section-heading>div:last-child{margin-top:18px}
+.program-grid{grid-template-columns:1fr 1fr}
+.cta-inner{display:block}
+.cta .btn{margin-top:30px}
+.footer-top{grid-template-columns:1fr 1fr}
+}
+
+@media(max-width:600px){
+.container{width:min(calc(100% - 32px),var(--max))}
+.header-inner{height:70px}
+.header-btn{display:none}
+.hero h1{font-size:48px}
+.hero p{font-size:15px}
+.hero-visual{height:390px}
+.hero-main-image{height:350px;width:86%}
+.hero-small-image{height:155px;width:48%;border-width:7px}
+.hero-label{font-size:9px;padding:12px 14px;bottom:22px}
+.intro,.principles,.programs{padding:75px 0}
+.feature,.impact{padding:75px 0}
+.intro h2,
+.section-heading h2,
+.feature-content h2,
+.impact h2{font-size:40px}
+.principle-grid{grid-template-columns:1fr}
+.principle,.principle:not(:first-child){padding:30px 0;border-right:0;border-bottom:1px solid var(--border)}
+.principle:last-child{border-bottom:0}
+.principle-number{margin-bottom:25px}
+.feature-image{height:400px}
+.program-grid{grid-template-columns:1fr}
+.impact-images{height:390px}
+.stats{grid-template-columns:1fr 1fr}
+.stat strong{font-size:34px}
+.footer-top{grid-template-columns:1fr}
+.footer-bottom{display:block}
+.footer-bottom span{display:block;margin-bottom:7px}
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+<div class="container header-inner">
+<a href="#" class="logo">Lorem<span>.</span>Ipsum</a>
+<nav class="nav">
+<a href="#about">Lorem</a>
+<a href="#principles">Ipsum</a>
+<a href="#programs">Dolor</a>
+<a href="#impact">Amet</a>
+<a href="#contact">Consectetur</a>
+</nav>
+<a href="#contact" class="header-btn">Lorem Ipsum</a>
+</div>
+</header>
+
+<main>
+
+<section class="hero">
+<div class="container hero-inner">
+<div class="hero-copy">
+<div class="eyebrow">Lorem · Ipsum · Dolor</div>
+<h1>Building stronger futures through meaningful action.</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae justo nec libero consequat tincidunt. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+<div class="hero-actions">
+<a href="#programs" class="btn btn-primary">Lorem Ipsum</a>
+<a href="#about" class="btn btn-outline">Dolor Sit Amet</a>
+</div>
+</div>
+
+<div class="hero-visual">
+<img class="hero-main-image" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1100&q=85" alt="">
+<img class="hero-small-image" src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=600&q=85" alt="">
+<div class="hero-label">Lorem Ipsum Dolor</div>
+</div>
+</div>
+</section>
+
+<section class="intro" id="about">
+<div class="container intro-grid">
+<div>
+<div class="section-label">01 — Lorem Ipsum</div>
+<h2>A long-term approach to meaningful development.</h2>
+</div>
+
+<div class="intro-copy">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui.</p>
+<p>Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Maecenas faucibus mollis interdum.</p>
+<a href="#" class="text-link">Lorem Ipsum →</a>
+</div>
+</div>
+</section>
+
+<section class="principles" id="principles">
+<div class="container">
+<div class="section-heading">
+<div>
+<div class="section-label">02 — Lorem Ipsum</div>
+<h2>What guides our work.</h2>
+</div>
+<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</div>
+</div>
+
+<div class="principle-grid">
+<div class="principle">
+<div class="principle-number">01</div>
+<h3>Lorem Ipsum</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper nulla non metus auctor fringilla.</p>
+</div>
+
+<div class="principle">
+<div class="principle-number">02</div>
+<h3>Dolor Sit</h3>
+<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean lacinia bibendum nulla sed consectetur.</p>
+</div>
+
+<div class="principle">
+<div class="principle-number">03</div>
+<h3>Amet Elit</h3>
+<p>Vestibulum id ligula porta felis euismod semper. Cras mattis consectetur purus sit amet fermentum.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="feature">
+<div class="container feature-grid">
+<img class="feature-image" src="https://images.unsplash.com/photo-1544928147-79a2dbc1f389?auto=format&fit=crop&w=1000&q=85" alt="">
+
+<div class="feature-content">
+<div class="section-label">03 — Lorem Ipsum</div>
+<h2>Creating opportunities that extend beyond the present.</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+
+<div class="feature-list">
+<div class="feature-item">
+<span>01</span>
+<div>
+<h4>Lorem Ipsum Dolor</h4>
+<p>Consectetur adipiscing elit sed do eiusmod tempor.</p>
+</div>
+</div>
+
+<div class="feature-item">
+<span>02</span>
+<div>
+<h4>Dolor Sit Amet</h4>
+<p>Integer posuere erat a ante venenatis dapibus.</p>
+</div>
+</div>
+
+<div class="feature-item">
+<span>03</span>
+<div>
+<h4>Consectetur Elit</h4>
+<p>Praesent commodo cursus magna scelerisque nisl.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="programs" id="programs">
+<div class="container">
+<div class="section-heading">
+<div>
+<div class="section-label">04 — Lorem Ipsum</div>
+<h2>Programs & initiatives.</h2>
+</div>
+<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id elit non mi porta gravida at eget metus.</div>
+</div>
+
+<div class="program-grid">
+
+<article class="program">
+<img class="program-image" src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=85" alt="">
+<div class="program-body">
+<div class="program-tag">Lorem Ipsum</div>
+<h3>Dolor Sit Amet</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper nulla non metus auctor fringilla.</p>
+<a href="#">Lorem Ipsum →</a>
+</div>
+</article>
+
+<article class="program">
+<img class="program-image" src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=900&q=85" alt="">
+<div class="program-body">
+<div class="program-tag">Consectetur</div>
+<h3>Lorem Dolor</h3>
+<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis.</p>
+<a href="#">Lorem Ipsum →</a>
+</div>
+</article>
+
+<article class="program">
+<img class="program-image" src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=900&q=85" alt="">
+<div class="program-body">
+<div class="program-tag">Amet Elit</div>
+<h3>Ipsum Consectetur</h3>
+<p>Cras mattis consectetur purus sit amet fermentum. Maecenas faucibus mollis interdum.</p>
+<a href="#">Lorem Ipsum →</a>
+</div>
+</article>
+
+</div>
+</div>
+</section>
+
+<section class="impact" id="impact">
+<div class="container impact-grid">
+
+<div>
+<div class="section-label">05 — Lorem Ipsum</div>
+<h2>Turning ideas into measurable impact.</h2>
+<p class="impact-copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis. Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+
+<div class="stats">
+<div class="stat">
+<strong>120+</strong>
+<span>Lorem Ipsum</span>
+</div>
+<div class="stat">
+<strong>48</strong>
+<span>Dolor Sit</span>
+</div>
+<div class="stat">
+<strong>16</strong>
+<span>Amet Elit</span>
+</div>
+<div class="stat">
+<strong>08</strong>
+<span>Consectetur</span>
+</div>
+</div>
+</div>
+
+<div class="impact-images">
+<img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1000&q=85" alt="">
+<img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=85" alt="">
+</div>
+
+</div>
+</section>
+
+<section class="cta" id="contact">
+<div class="container cta-inner">
+<div>
+<h2>Lorem ipsum dolor sit amet consectetur adipiscing elit.</h2>
+<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Integer posuere erat a ante venenatis dapibus.</p>
+</div>
+<a href="#" class="btn">Lorem Ipsum →</a>
+</div>
+</section>
+
+</main>
+
+<footer class="footer">
+<div class="container">
+<div class="footer-top">
+
+<div>
+<div class="footer-logo">Lorem<span>.</span>Ipsum</div>
+<p class="footer-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis.</p>
+</div>
+
+<div>
+<h4>Lorem Ipsum</h4>
+<a href="#">Dolor Sit</a>
+<a href="#">Amet Elit</a>
+<a href="#">Consectetur</a>
+<a href="#">Adipiscing</a>
+</div>
+
+<div>
+<h4>Dolor Amet</h4>
+<a href="#">Lorem Ipsum</a>
+<a href="#">Praesent</a>
+<a href="#">Vestibulum</a>
+<a href="#">Maecenas</a>
+</div>
+
+<div>
+<h4>Consectetur</h4>
+<p>Lorem ipsum dolor sit amet</p>
+<p>+961 00 000 000</p>
+<p>hello@lorem.org</p>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+<span>© 2026 Lorem Ipsum</span>
+<span>Lorem Ipsum · Dolor Sit · Amet</span>
+</div>
+</div>
+</footer>
+
+</body>
+</html>
